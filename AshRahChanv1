@@ -1,0 +1,116 @@
+def reward_function(params):
+    '''
+    Reward function that combines center line following, track boundaries check, and steering penalty
+    '''
+
+Read input parameters
+    track_width = params['track_width']
+    distance_from_center = params['distance_from_center']
+    all_wheels_on_track = params['all_wheels_on_track']
+    abs_steering = abs(params['steering_angle']) # Absolute steering angle
+
+    # Initialize a base reward
+    reward = 1e-3  # Small reward by default to penalize poor behavior
+
+    # Reward for keeping all wheels on track and within reasonable boundaries
+    if all_wheels_on_track:
+        reward = 1.0  # Baseline reward if all wheels are on the track
+
+Define markers at different distances from the center line
+        marker_1 = 0.1 * track_width
+        marker_2 = 0.25 * track_width
+        marker_3 = 0.5 * track_width
+
+        # Reward for staying close to the center line
+        if distance_from_center <= marker_1:
+            reward += 1.0  # Highest reward for being closest to center
+        elif distance_from_center <= marker_2:
+            reward += 0.5  # Moderate reward for being a bit farther from center
+        elif distance_from_center <= marker_3:
+            reward += 0.1  # Minimal reward for being farther from center
+
+    # Apply a steering penalty for excessive steering to prevent zig-zag behavior
+    ABS_STEERING_THRESHOLD = 15  # Steering angle threshold
+    if abs_steering > ABS_STEERING_THRESHOLD:
+        reward *= 0.8  # Reduce reward if the agent is steering too much
+
+    # Always return a float reward value
+    return float(reward)
+[12:47 PM]
+def reward_function(params):
+    '''
+    Reward function that combines center line following, track boundaries check, and steering penalty
+    '''
+
+Read input parameters
+    track_width = params['track_width']
+    distance_from_center = params['distance_from_center']
+    all_wheels_on_track = params['all_wheels_on_track']
+    abs_steering = abs(params['steering_angle']) # Absolute steering angle
+
+    # Initialize a base reward
+    reward = 1e-3  # Small reward by default to penalize poor behavior
+
+    # Reward for keeping all wheels on track and within reasonable boundaries
+    if all_wheels_on_track:
+        reward = 1.0  # Baseline reward if all wheels are on the track
+
+Define markers at different distances from the center line
+        marker_1 = 0.1 * track_width
+        marker_2 = 0.25 * track_width
+        marker_3 = 0.5 * track_width
+
+        # Reward for staying close to the center line
+        if distance_from_center <= marker_1:
+            reward += 1.0  # Highest reward for being closest to center
+        elif distance_from_center <= marker_2:
+            reward += 0.5  # Moderate reward for being a bit farther from center
+        elif distance_from_center <= marker_3:
+            reward += 0.1  # Minimal reward for being farther from center
+
+    # Apply a steering penalty for excessive steering to prevent zig-zag behavior
+    ABS_STEERING_THRESHOLD = 15  # Steering angle threshold
+    if abs_steering > ABS_STEERING_THRESHOLD:
+        reward *= 0.8  # Reduce reward if the agent is steering too much
+
+    # Always return a float reward value
+    return float(reward)
+[12:48 PM]
+def reward_function(params):
+    '''
+    Reward function that combines center line following, track boundaries check, and steering penalty
+    '''
+
+Read input parameters
+    track_width = params['track_width']
+    distance_from_center = params['distance_from_center']
+    all_wheels_on_track = params['all_wheels_on_track']
+    abs_steering = abs(params['steering_angle']) # Absolute steering angle
+
+    # Initialize a base reward
+    reward = 1e-3  # Small reward by default to penalize poor behavior
+
+    # Reward for keeping all wheels on track and within reasonable boundaries
+    if all_wheels_on_track:
+        reward = 1.0  # Baseline reward if all wheels are on the track
+
+Define markers at different distances from the center line
+        marker_1 = 0.1 * track_width
+        marker_2 = 0.25 * track_width
+        marker_3 = 0.5 * track_width
+
+        # Reward for staying close to the center line
+        if distance_from_center <= marker_1:
+            reward += 1.0  # Highest reward for being closest to center
+        elif distance_from_center <= marker_2:
+            reward += 0.5  # Moderate reward for being a bit farther from center
+        elif distance_from_center <= marker_3:
+            reward += 0.1  # Minimal reward for being farther from center
+
+    # Apply a steering penalty for excessive steering to prevent zig-zag behavior
+    ABS_STEERING_THRESHOLD = 15  # Steering angle threshold
+    if abs_steering > ABS_STEERING_THRESHOLD:
+        reward *= 0.8  # Reduce reward if the agent is steering too much
+
+    # Always return a float reward value
+    return float(reward)
