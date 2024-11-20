@@ -16,7 +16,7 @@ This project focuses on training an AWS DeepRacer model to navigate the re:Inven
 # Project Achievements
 Out of 31 teams in the initial racing round, our model achieved an outstanding 4th place, showcasing its precision and performance. Advancing to the Top 10 round, we secured a strong 6th place overall, reflecting a balance between speed, stability, and strategic track handling.
 
-The track was the re:Invent 2018 features a mix of straight sections and challenging curves, requiring precise speed control and lane positioning. This project focused on strategic handling to maximize efficiency, using a custom reward function tailored to the track's unique layout.
+The track was the re:Invent 2018 features a mix of straight sections and challenging curves, requiring precise speed control and lane positioning. This project focused on strategic handling to maximize efficiency, using a custom reward function tailored to the track's unique layout. The training was limited to 300 minutes, requiring efficient use of time to fine-tune the model and optimize performance for the track's varied challenges.
 
 # Reward Function
 The reward function is the core component that drives the model's learning. It assigns rewards or penalties based on various factors, guiding the car to improve its driving policy. Here's a breakdown of the logic:
