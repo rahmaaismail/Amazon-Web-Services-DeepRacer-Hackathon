@@ -13,19 +13,37 @@ Racing League and Community: AWS DeepRacer League is a global racing competition
 
 This project focuses on training an AWS DeepRacer model to navigate the re:Invent 2018 track using reinforcement learning. The model is designed to optimize speed, stability, and control, leveraging a custom reward function to achieve competitive lap times on the challenging track layout.
 
-Project Overview
-AWS DeepRacer provides a fun and practical way to experiment with reinforcement learning (RL). This project uses RL principles to create a model that can autonomously drive a 1/18th-scale race car around the re:Invent 2018 track, optimizing for factors like lane positioning, speed, and turn handling.
+# Project Achievements
+Out of 31 teams in the initial racing round, our model achieved an outstanding 4th place, showcasing its precision and performance. Advancing to the Top 10 round, we secured a strong 6th place overall, reflecting a balance between speed, stability, and strategic track handling.
 
-The re:Invent 2018 track has a series of straight sections and turns that require strategic control of speed and positioning. The reward function created here helps guide the DeepRacer car through the track efficiently, minimizing off-track penalties and maximizing progress.
+The track was the re:Invent 2018 features a mix of straight sections and challenging curves, requiring precise speed control and lane positioning. This project focused on strategic handling to maximize efficiency, using a custom reward function tailored to the track's unique layout.
 
-Reward Function
-The reward function is the core of this model's training strategy. This function rewards the car for staying close to the track center, controlling speed based on steering angle, and completing the track quickly. Here’s an outline of the key elements:
+# Reward Function
+The reward function is the core component that drives the model's learning. It assigns rewards or penalties based on various factors, guiding the car to improve its driving policy. Here's a breakdown of the logic:
 
-Reward Function Logic
-Centerline Reward: Rewards the car for staying close to the center of the track. This reduces the risk of going off-track, especially in turns.
+# Key Features
+Centerline Reward:
 
-Speed and Steering Control: The function rewards the car for maintaining a higher speed on straight sections but moderates speed in sharp turns by factoring in the steering angle. This encourages controlled driving on turns while maximizing speed on straights.
+Encourages the car to stay close to the track center to minimize off-track penalties and improve stability.
+Speed and Steering Control:
 
-Progressive Reward: Adds a bonus based on the car’s progress through the track, motivating the car to complete laps efficiently.
+Rewards higher speeds on straight sections while encouraging slower, controlled driving on sharp turns to prevent zig-zag behavior.
+Progressive Reward:
 
-Straight-Line Bonus: Rewards minimal steering angle on straight sections, promoting smooth, stable driving on track sections that do not require turning.
+Incentivizes the car to complete laps efficiently by rewarding progress through the track.
+Straight-Line Bonus:
+
+Rewards minimal steering angles on straight sections to promote smooth, stable driving.
+Curvature Adaptation:
+
+Adjusts rewards based on the track's curvature, guiding the car to optimize its speed and stability based on upcoming turns.
+Code Highlights: Reward Function
+The custom reward function is implemented in Python and incorporates various considerations to optimize performance. Below is a high-level outline of its logic:
+
+Staying on Track: Rewards for all wheels remaining on the track.
+Centerline Distance: Gradual rewards based on proximity to the centerline.
+Speed Management:
+High speed on straight sections.
+Reduced speed on curves to maintain control.
+Steering Angle Penalties: Avoids excessive steering to prevent zig-zag behavior.
+Curvature Awareness: Adjusts driving behavior dynamically based on track curvature and direction.
