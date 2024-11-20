@@ -18,6 +18,8 @@ Out of 31 teams in the initial racing round, our model achieved an outstanding 4
 
 The track was the re:Invent 2018 features a mix of straight sections and challenging curves, requiring precise speed control and lane positioning. This project focused on strategic handling to maximize efficiency, using a custom reward function tailored to the track's unique layout. The training was limited to 300 minutes, requiring efficient use of time to fine-tune the model and optimize performance for the track's varied challenges.
 
+UVic Qualifying Initial Round Leaderboard: https://dhwxpgndrwxhz.cloudfront.net/leaderboard/b070fc94-0e6b-4336-a8c7-9bc121299bd9/?scroll=false&track=2&format=fastest
+
 # Reward Function
 The reward function is the core component that drives the model's learning. It assigns rewards or penalties based on various factors, guiding the car to improve its driving policy. Here's a breakdown of the logic:
 
